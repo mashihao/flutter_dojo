@@ -14,7 +14,8 @@ class SplashPage extends StatefulWidget {
   _SplashPageState createState() => _SplashPageState();
 }
 
-class _SplashPageState extends State<SplashPage> with SingleTickerProviderStateMixin {
+class _SplashPageState extends State<SplashPage>
+    with SingleTickerProviderStateMixin {
   AnimationController _animationController;
   SplashAnimManager _splashAnimManager;
 
@@ -28,7 +29,11 @@ class _SplashPageState extends State<SplashPage> with SingleTickerProviderStateM
     Future.delayed(Duration(milliseconds: 300)).then((value) {
       _animationController.forward();
       Future.delayed(Duration(milliseconds: 1500), () {
-        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => MainPageScrollContainer()), (Route<dynamic> rout) => false);
+        //TODO跳转到主界面
+        Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => MainPageScrollContainer()),
+            (Route<dynamic> rout) => false);
       });
     });
 
@@ -70,9 +75,11 @@ class _SplashPageState extends State<SplashPage> with SingleTickerProviderStateM
         fit: StackFit.expand,
         alignment: Alignment.center,
         children: <Widget>[
+          //左侧字
           AnimatedBuilder(
             animation: _animationController,
             builder: (context, widget) {
+              print(_splashAnimManager.animLeft.value);
               return Positioned(
                 right: _splashAnimManager.animLeft.value,
                 child: Text(
@@ -86,6 +93,7 @@ class _SplashPageState extends State<SplashPage> with SingleTickerProviderStateM
               );
             },
           ),
+          //右侧字
           AnimatedBuilder(
             animation: _animationController,
             builder: (context, widget) {

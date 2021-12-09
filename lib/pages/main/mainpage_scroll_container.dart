@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dojo/category/pattern/popup/toast.dart';
 import 'package:flutter_dojo/pages/animation/animation_mainpage.dart';
 import 'package:flutter_dojo/pages/backend/backend_manpage.dart';
 import 'package:flutter_dojo/pages/main/mainpage_page_header.dart';
@@ -9,7 +10,8 @@ import 'mainpage_page_layout.dart';
 
 class MainPageScrollContainer extends StatefulWidget {
   @override
-  _MainPageScrollContainerState createState() => _MainPageScrollContainerState();
+  _MainPageScrollContainerState createState() =>
+      _MainPageScrollContainerState();
 }
 
 class _MainPageScrollContainerState extends State<MainPageScrollContainer> {
@@ -65,7 +67,8 @@ class _MainPageScrollContainerState extends State<MainPageScrollContainer> {
                     child: PageView(
                       controller: pageController
                         ..addListener(() {
-                          notifier.value = pageController.offset / pageController.position.maxScrollExtent;
+                          notifier.value = pageController.offset /
+                              pageController.position.maxScrollExtent;
                         }),
                       children: <Widget>[
                         PageWidget(
@@ -73,7 +76,10 @@ class _MainPageScrollContainerState extends State<MainPageScrollContainer> {
                           'Show Flutter Widgets in category',
                           'assets/images/widget_bg.png',
                           () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => WidgetMainPage()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => WidgetMainPage()));
                           },
                         ),
                         PageWidget(
@@ -81,7 +87,10 @@ class _MainPageScrollContainerState extends State<MainPageScrollContainer> {
                           'Show UI Pattern in most Apps',
                           'assets/images/pattern_bg.png',
                           () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => PatternMainPage()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => PatternMainPage()));
                           },
                         ),
                         PageWidget(
@@ -89,7 +98,10 @@ class _MainPageScrollContainerState extends State<MainPageScrollContainer> {
                           'Show Flutter Animations',
                           'assets/images/animation_bg.jpg',
                           () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => AnimationMainPage()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AnimationMainPage()));
                           },
                         ),
                         PageWidget(
@@ -97,7 +109,10 @@ class _MainPageScrollContainerState extends State<MainPageScrollContainer> {
                           'Show Flutter back-end util',
                           'assets/images/backend.jpg',
                           () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => BackendMainPage()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => BackendMainPage()));
                           },
                         ),
                       ],
@@ -129,21 +144,27 @@ class _MainPageScrollContainerState extends State<MainPageScrollContainer> {
         drawer: Drawer(
           child: Container(
             padding: const EdgeInsets.all(24),
-            color: Colors.black26,
+            color: Colors.white10,
             child: ListView(
               children: <Widget>[
                 Align(
-                  alignment: Alignment.centerLeft,
+                  alignment: Alignment.center,
                   child: CircleAvatar(
                     radius: 40,
-                    child: Text('Xu'),
+                    child: Text('马世豪'),
                     backgroundColor: Colors.blue,
                   ),
                 ),
                 ListTile(
+                  onTap: () => {Toast.show(context, "click")},
                   title: Text('Username'),
                   subtitle: Text('Email'),
-                  trailing: Icon(Icons.keyboard_arrow_right),
+                  trailing: Icon(
+                    Icons.keyboard_arrow_right,
+                    //icon 添加颜色
+                    color: Colors.red,
+                    size: 50,
+                  ),
                 ),
                 SizedBox(height: 16),
                 ListTile(
@@ -155,25 +176,33 @@ class _MainPageScrollContainerState extends State<MainPageScrollContainer> {
                         selectedColor: Colors.blueAccent,
                         label: Text('Light'),
                         labelStyle: TextStyle(fontSize: 15),
-                        onSelected: (value) {},
+                        onSelected: (value) {
+                          Toast.show(context, "Light");
+                        },
                         selected: true,
                       ),
+                      //添加 间距
                       SizedBox(width: 16),
                       ChoiceChip(
                         backgroundColor: Colors.grey,
                         selectedColor: Colors.blueAccent,
                         label: Text('Dark'),
                         labelStyle: TextStyle(fontSize: 15),
-                        onSelected: (value) {},
-                        selected: false,
+                        onSelected: (value) {
+                          Toast.show(context, "Dark");
+                        },
+                        selected: true,
                       ),
+                      //添加 间距
                       SizedBox(width: 16),
                       ChoiceChip(
                         backgroundColor: Colors.grey,
                         selectedColor: Colors.blueAccent,
                         label: Text('Github'),
                         labelStyle: TextStyle(fontSize: 15),
-                        onSelected: (value) {},
+                        onSelected: (value) {
+                          Toast.show(context, "Github");
+                        },
                         selected: false,
                       ),
                       SizedBox(width: 16),
