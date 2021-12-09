@@ -134,7 +134,6 @@ class _MainPageScrollContainerState extends State<MainPageScrollContainer> {
                       builder: (context, value, widget) {
                         return LinearProgressIndicator(
                           value: notifier.value,
-                          backgroundColor: Colors.blue,
                           valueColor: AlwaysStoppedAnimation(
                             Color.lerp(
                               Color(0xFF673AB7),
