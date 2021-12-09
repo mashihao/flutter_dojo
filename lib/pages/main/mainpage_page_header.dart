@@ -15,8 +15,10 @@ class MainPagePageHeader extends StatelessWidget {
           height: kToolbarHeight,
           child: Row(
             children: <Widget>[
+              // menu
               GestureDetector(
                 onTap: () {
+                  //打开
                   Scaffold.of(context).openDrawer();
                 },
                 child: Container(
@@ -27,9 +29,14 @@ class MainPagePageHeader extends StatelessWidget {
                   ),
                 ),
               ),
+              //搜索
               GestureDetector(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => SearchMainPage()));
+                  //跳转搜索界面
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SearchMainPage()));
                 },
                 child: Container(
                   margin: EdgeInsets.only(left: 16),
@@ -43,8 +50,10 @@ class MainPagePageHeader extends StatelessWidget {
                 ),
               ),
               Spacer(),
+              // 收藏界面
               GestureDetector(
-                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => CollectPage())),
+                onTap: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CollectPage())),
                 child: Container(
                   margin: EdgeInsets.only(right: 16),
                   child: Icon(
@@ -53,9 +62,11 @@ class MainPagePageHeader extends StatelessWidget {
                   ),
                 ),
               ),
+              //
               GestureDetector(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => FeedMainPage()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => FeedMainPage()));
                 },
                 child: Container(
                   margin: EdgeInsets.only(right: 16),
@@ -65,9 +76,11 @@ class MainPagePageHeader extends StatelessWidget {
                   ),
                 ),
               ),
+              //关于我
               GestureDetector(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => AboutMeWidget()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => AboutMeWidget()));
                 },
                 child: Container(
                   margin: EdgeInsets.only(right: 16),
@@ -80,6 +93,7 @@ class MainPagePageHeader extends StatelessWidget {
             ],
           ),
         ),
+        //添加间距
         SizedBox(height: kToolbarHeight / 3),
         Row(
           mainAxisSize: MainAxisSize.max,
@@ -91,7 +105,7 @@ class MainPagePageHeader extends StatelessWidget {
             ),
             SizedBox(width: 16),
             Text(
-              'Flutter Dojo',
+              'Flutter Demo',
               style: TextStyle(
                 fontSize: 48,
                 color: Colors.white,

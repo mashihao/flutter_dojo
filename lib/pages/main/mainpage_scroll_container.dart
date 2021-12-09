@@ -16,6 +16,7 @@ class MainPageScrollContainer extends StatefulWidget {
 
 class _MainPageScrollContainerState extends State<MainPageScrollContainer> {
   PageController pageController;
+  //类似于 LiveData 数据监听使用
   ValueNotifier<double> notifier = ValueNotifier<double>(0);
 
   @override
@@ -39,9 +40,11 @@ class _MainPageScrollContainerState extends State<MainPageScrollContainer> {
         body: Stack(
           alignment: Alignment.bottomCenter,
           children: <Widget>[
+            //顶部 渐变颜色背景
             ValueListenableBuilder(
               valueListenable: notifier,
               builder: (context, value, widget) {
+                //颜色渐变
                 return Container(
                   color: Color.lerp(
                     Color(0xFF673AB7),
@@ -51,15 +54,18 @@ class _MainPageScrollContainerState extends State<MainPageScrollContainer> {
                 );
               },
             ),
+            //头部文案
             MainPagePageHeader(),
             Container(
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                ),
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
+                    bottomRight: Radius.circular(20),
+                    bottomLeft: Radius.circular(20)),
               ),
+              // 占 屏幕 70%  MediaQuery 获取 屏幕相应参数
               height: MediaQuery.of(context).size.height * 0.7,
               child: Column(
                 children: <Widget>[
@@ -67,8 +73,11 @@ class _MainPageScrollContainerState extends State<MainPageScrollContainer> {
                     child: PageView(
                       controller: pageController
                         ..addListener(() {
+                          // 最终是 0-1 的数值 刚好用于底部颜色渐变
                           notifier.value = pageController.offset /
                               pageController.position.maxScrollExtent;
+                          print(
+                              "${pageController.offset}---${pageController.position.maxScrollExtent}");
                         }),
                       children: <Widget>[
                         PageWidget(
