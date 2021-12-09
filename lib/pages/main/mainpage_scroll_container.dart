@@ -151,7 +151,7 @@ class _MainPageScrollContainerState extends State<MainPageScrollContainer> {
                   alignment: Alignment.center,
                   child: CircleAvatar(
                     radius: 40,
-                    child: Text('helloword'),
+                    child: Text('马世豪'),
                     backgroundColor: Colors.blue,
                   ),
                 ),
