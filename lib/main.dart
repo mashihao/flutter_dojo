@@ -15,7 +15,10 @@ import 'category/backend/pageroute.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SpUtil.getInstance();
-  await SystemChrome.setPreferredOrientations(<DeviceOrientation>[DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]).then((_) {
+  await SystemChrome.setPreferredOrientations(<DeviceOrientation>[
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown
+  ]).then((_) {
     runApp(
       MultiProvider(
         providers: [
@@ -24,7 +27,8 @@ void main() async {
           ChangeNotifierProvider(create: (_) => CollectProvider()),
           ValueListenableProvider<ValueNotifyModel>(
             create: (_) => ValueNotifyModelWrapper(ValueNotifyModel(0)),
-            updateShouldNotify: (previous, current) => previous.value != current.value,
+            updateShouldNotify: (previous, current) =>
+                previous.value != current.value,
           ),
           StreamProvider<int>(
             create: (_) => ProviderStream().stream,
@@ -56,7 +60,8 @@ class MyApp extends StatelessWidget {
     if (Platform.isAndroid) {
       // 在组件渲染之后，再覆写状态栏颜色
       // 如果使用了APPBar，则需要修改brightness属性
-      SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+      SystemUiOverlayStyle systemUiOverlayStyle =
+          SystemUiOverlayStyle(statusBarColor: Colors.transparent);
       SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
     }
     return MaterialApp(
