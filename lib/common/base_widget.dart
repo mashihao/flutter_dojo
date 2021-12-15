@@ -25,7 +25,10 @@ class _BaseWidgetState extends State<BaseWidget> {
     collects = List<String>.from(SpUtil.getStringList('collects'));
     collected = collects.indexWhere((element) => element == widget.title) != -1;
     final mediaQuery = MediaQuery.of(context);
-    final contentHeight = mediaQuery.size.height - mediaQuery.padding.top - mediaQuery.padding.bottom - kToolbarHeight;
+    final contentHeight = mediaQuery.size.height -
+        mediaQuery.padding.top -
+        mediaQuery.padding.bottom -
+        kToolbarHeight;
     return WillPopScope(
       onWillPop: () {
         Navigator.pop(context, '');
@@ -37,16 +40,17 @@ class _BaseWidgetState extends State<BaseWidget> {
           elevation: 0,
           leading: IconButton(
             icon: const BackButtonIcon(),
-            color: Colors.redAccent,
+            color: Colors.black,
             onPressed: () {
               Navigator.maybePop(context, null);
             },
           ),
+          // 状态栏 深色还是暗色
           brightness: Brightness.light,
           actions: <Widget>[
             IconButton(
               icon: Icon(collected ? Icons.star : Icons.star_border),
-              color: Colors.black54,
+              color: Colors.black,
               onPressed: () {
                 if (mounted) {
                   setState(() {
@@ -77,7 +81,8 @@ class _BaseWidgetState extends State<BaseWidget> {
               color: Colors.black54,
               onPressed: () {
                 String path = widget.codePath + '.dart';
-                getExampleCode(context, path, DefaultAssetBundle.of(context)).then<void>((String code) {
+                getExampleCode(context, path, DefaultAssetBundle.of(context))
+                    .then<void>((String code) {
                   var shareText = code ?? 'Example code not found';
                   Share.share(shareText);
                 });

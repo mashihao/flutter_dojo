@@ -29,7 +29,7 @@ class WidgetMainPageListItem extends StatelessWidget {
                 left: 50,
                 right: 20,
               ),
-              //约定 高度为 100
+              //约定 最小高度为 100 可以拉伸高度
               constraints: BoxConstraints(minHeight: 100),
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8),
@@ -44,16 +44,6 @@ class WidgetMainPageListItem extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 24,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        subtitle,
-                        style: TextStyle(
-                          color: Color(0xffb6b2df),
-                          fontSize: 12,
                         ),
                       ),
                     ),
