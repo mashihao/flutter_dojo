@@ -22,6 +22,7 @@ import 'widget_category_styling.dart';
 import 'widget_category_text.dart';
 import 'widget_category_touch_interactions.dart';
 
+// 获取 widget category 列表
 List<DemoItemCategory> buildWidgetCategoryList = [
   accessibility,
   animationAndMotion,
@@ -76,7 +77,8 @@ DemoItemCategory async = DemoItemCategory(
 
 DemoItemCategory basic = DemoItemCategory(
   name: 'Basic',
-  subName: 'Widgets you absolutely need to know before building your first Flutter app.',
+  subName:
+      'Widgets you absolutely need to know before building your first Flutter app.',
   icon: 'assets/images/stack.png',
   list: buildBasicDemoItems('lib/category/widgets/basic/'),
 );
@@ -90,7 +92,8 @@ DemoItemCategory cupertino = DemoItemCategory(
 
 DemoItemCategory input = DemoItemCategory(
   name: 'Input',
-  subName: 'Take user input in addition to input widgets in Material Components and Cupertino.',
+  subName:
+      'Take user input in addition to input widgets in Material Components and Cupertino.',
   icon: 'assets/images/text.png',
   list: buildInputDemoItems('lib/category/widgets/input/'),
 );
@@ -99,7 +102,8 @@ DemoItemCategory touchInteractions = DemoItemCategory(
   name: 'Touch interactions',
   subName: 'Respond to touch events and route users to different views.',
   icon: 'assets/images/logo.png',
-  list: buildTouchInteractionsDemoItems('lib/category/widgets/touchinteractions/'),
+  list: buildTouchInteractionsDemoItems(
+      'lib/category/widgets/touchinteractions/'),
 );
 
 DemoItemCategory routing = DemoItemCategory(
@@ -111,63 +115,77 @@ DemoItemCategory routing = DemoItemCategory(
 
 DemoItemCategory singleChildLayout = DemoItemCategory(
   name: 'Single-child layout widgets',
-  subName: 'Arrange other widgets columns, rows, grids, and many other layouts.',
+  subName:
+      'Arrange other widgets columns, rows, grids, and many other layouts.',
   icon: 'assets/images/container.png',
-  list: buildSingleChildLayoutDemoItems('lib/category/widgets/singlechildlayout/'),
+  list: buildSingleChildLayoutDemoItems(
+      'lib/category/widgets/singlechildlayout/'),
 );
 
 DemoItemCategory multiChildLayout = DemoItemCategory(
   name: 'Multi-child layout',
-  subName: 'Arrange other widgets columns, rows, grids, and many other layouts.',
+  subName:
+      'Arrange other widgets columns, rows, grids, and many other layouts.',
   icon: 'assets/images/components_grid_lists.png',
-  list: buildMultiChildLayoutDemoItems('lib/category/widgets/multichildlayout/'),
+  list:
+      buildMultiChildLayoutDemoItems('lib/category/widgets/multichildlayout/'),
 );
 
 DemoItemCategory appStructureNavigation = DemoItemCategory(
   name: 'App structure and navigation',
-  subName: 'Visual, behavioral, and motion-rich widgets implementing the Material Design guidelines.',
+  subName:
+      'Visual, behavioral, and motion-rich widgets implementing the Material Design guidelines.',
   icon: 'assets/images/layout_structure_regions_mobile.png',
-  list: buildAppStructureNavigationDemoItems('lib/category/widgets/appstructurenavigation/'),
+  list: buildAppStructureNavigationDemoItems(
+      'lib/category/widgets/appstructurenavigation/'),
 );
 
 DemoItemCategory buttons = DemoItemCategory(
   name: 'Buttons',
-  subName: 'Visual, behavioral, and motion-rich widgets implementing the Material Design guidelines.',
+  subName:
+      'Visual, behavioral, and motion-rich widgets implementing the Material Design guidelines.',
   icon: 'assets/images/components_buttons_usage2.png',
   list: buildButtonsDemoItems('lib/category/widgets/buttons/'),
 );
 
 DemoItemCategory inputSelections = DemoItemCategory(
   name: 'Input and selections',
-  subName: 'Visual, behavioral, and motion-rich widgets implementing the Material Design guidelines.',
+  subName:
+      'Visual, behavioral, and motion-rich widgets implementing the Material Design guidelines.',
   icon: 'assets/images/components_text_fields.png',
   list: buildInputSelectionsDemoItems('lib/category/widgets/inputselections/'),
 );
 
 DemoItemCategory dialogsAlertsPanels = DemoItemCategory(
   name: 'Dialogs, alerts, and panels',
-  subName: 'Visual, behavioral, and motion-rich widgets implementing the Material Design guidelines.',
+  subName:
+      'Visual, behavioral, and motion-rich widgets implementing the Material Design guidelines.',
   icon: 'assets/images/components_dialogs.png',
-  list: buildDialogsAlertsPanelsDemoItems('lib/category/widgets/dialogsalertspanels/'),
+  list: buildDialogsAlertsPanelsDemoItems(
+      'lib/category/widgets/dialogsalertspanels/'),
 );
 
 DemoItemCategory informationDisplays = DemoItemCategory(
   name: 'Information displays',
-  subName: 'Visual, behavioral, and motion-rich widgets implementing the Material Design guidelines.',
+  subName:
+      'Visual, behavioral, and motion-rich widgets implementing the Material Design guidelines.',
   icon: 'assets/images/components_cards.png',
-  list: buildInformationDisplaysDemoItems('lib/category/widgets/informationdisplays/'),
+  list: buildInformationDisplaysDemoItems(
+      'lib/category/widgets/informationdisplays/'),
 );
 
 DemoItemCategory layout = DemoItemCategory(
   name: 'Layout',
-  subName: 'Visual, behavioral, and motion-rich widgets implementing the Material Design guidelines.',
+  subName:
+      'Visual, behavioral, and motion-rich widgets implementing the Material Design guidelines.',
   icon: 'assets/images/materialdesign_introduction.png',
   list: buildLayoutDemoItems('lib/category/widgets/layout/'),
 );
 
 DemoItemCategory paintingEffect = DemoItemCategory(
   name: 'Painting and effect',
-  subName: 'These widgets apply visual effects to the children without changing their layout, size, or position.',
+  subName:
+      'These widgets apply visual effects to the children without changing their layout, size, or position.',
   icon: 'assets/images/custompaint.png',
   list: buildPaintingEffectDemoItems('lib/category/widgets/paintingeffect/'),
 );
@@ -181,7 +199,8 @@ DemoItemCategory scrolling = DemoItemCategory(
 
 DemoItemCategory styling = DemoItemCategory(
   name: 'Styling',
-  subName: 'Manage the theme of your app, makes your app responsive to screen sizes, or add padding.',
+  subName:
+      'Manage the theme of your app, makes your app responsive to screen sizes, or add padding.',
   icon: 'assets/images/padding.png',
   list: buildStylingDemoItems('lib/category/widgets/styling/'),
 );
