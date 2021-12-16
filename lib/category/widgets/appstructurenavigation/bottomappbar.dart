@@ -5,8 +5,12 @@ class BottomAppBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: MainTitleWidget('BottomAppBar基本使用'),
+      body: Column(
+        children: [
+          Container(
+            child: MainTitleWidget('BottomAppBar基本使用'),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
@@ -22,6 +26,7 @@ class BottomAppBarWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             IconButton(
+              color: Colors.black,
               icon: Icon(Icons.home, color: Colors.white),
               onPressed: () {},
             ),
