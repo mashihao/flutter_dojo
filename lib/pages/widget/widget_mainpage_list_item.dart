@@ -12,20 +12,24 @@ class WidgetMainPageListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Container(
+        //纵向 相对 间距
         margin: EdgeInsets.symmetric(vertical: 8),
         child: Stack(
           alignment: Alignment.centerLeft,
           children: <Widget>[
             Container(
-              width: double.infinity,
+              //宽度为最大
+              width: double.maxFinite,
               margin: EdgeInsets.only(
                 left: 70,
                 right: 20,
               ),
+              //内间距
               padding: EdgeInsets.only(
                 left: 50,
                 right: 20,
               ),
+              //约定 最小高度为 100 可以拉伸高度
               constraints: BoxConstraints(minHeight: 100),
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8),
@@ -62,7 +66,9 @@ class WidgetMainPageListItem extends StatelessWidget {
               ),
             ),
             Padding(
+              // 左间距 30 + 半径40 刚好中心在 卡片 左侧轴上
               padding: const EdgeInsets.only(left: 30),
+              //椭圆 可以当做原型来使用  ClipOval
               child: ClipOval(
                 child: Container(
                   color: Colors.white70,

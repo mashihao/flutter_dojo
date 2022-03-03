@@ -35,8 +35,6 @@ class _FutureBuilderWidgetState extends State<FutureBuilderWidget> {
                     return Text('No FutureBuilder attached');
                     break;
                   case ConnectionState.waiting:
-                    return CircularProgressIndicator();
-                    break;
                   case ConnectionState.active:
                     return CircularProgressIndicator();
                     break;

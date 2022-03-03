@@ -61,12 +61,17 @@ class _ImageWidgetState extends State<ImageWidget> {
   Widget build(BuildContext context) {
     return ListView(
       children: <Widget>[
+        //主标题
         MainTitleWidget('Image From Asset'),
+        //副标题
         SubtitleWidget('gaplessPlayback可以防止图片快速切换时图片闪烁'),
+        //图片
         Image(
+          //https://fanyi.baidu.com/#en/zh/Asset
           image: AssetImage('assets/images/book.jpg'),
           height: 300,
           width: 300,
+          //gap缺口;差距;间隙  gapless 无缝衔接
           gaplessPlayback: true, // 在新图出现前保持旧的图 防止图片快速切换时图片闪烁
         ),
         MainTitleWidget('Image From Net with progress'),
@@ -76,7 +81,10 @@ class _ImageWidgetState extends State<ImageWidget> {
             if (loadingProgress == null) return child;
             return Center(
               child: CircularProgressIndicator(
-                value: loadingProgress.expectedTotalBytes != null ? loadingProgress.cumulativeBytesLoaded / loadingProgress.expectedTotalBytes : null,
+                value: loadingProgress.expectedTotalBytes != null
+                    ? loadingProgress.cumulativeBytesLoaded /
+                        loadingProgress.expectedTotalBytes
+                    : null,
               ),
             );
           },
@@ -84,7 +92,8 @@ class _ImageWidgetState extends State<ImageWidget> {
         MainTitleWidget('Image From Net with frameBuilder'),
         Image.network(
           'https://img.favpng.com/25/9/1/dart-google-developers-flutter-android-png-favpng-vi7iwNmVaBCVr91EF35XrnFfc.jpg',
-          frameBuilder: (BuildContext context, Widget child, int frame, bool wasSynchronouslyLoaded) {
+          frameBuilder: (BuildContext context, Widget child, int frame,
+              bool wasSynchronouslyLoaded) {
             if (wasSynchronouslyLoaded) {
               return child;
             }
@@ -250,7 +259,8 @@ class _ImageWidgetState extends State<ImageWidget> {
             'assets/images/yidong.png',
             width: 200,
             height: 200,
-            centerSlice: Rect.fromCircle(center: const Offset(35, 35), radius: 10),
+            centerSlice:
+                Rect.fromCircle(center: const Offset(35, 35), radius: 10),
           ),
         )
       ],

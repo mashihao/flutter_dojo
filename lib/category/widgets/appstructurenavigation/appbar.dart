@@ -6,13 +6,15 @@ class AppbarWidget extends StatefulWidget {
   _AppbarWidgetState createState() => _AppbarWidgetState();
 }
 
-class _AppbarWidgetState extends State<AppbarWidget> with SingleTickerProviderStateMixin {
+class _AppbarWidgetState extends State<AppbarWidget>
+    with SingleTickerProviderStateMixin {
   TabController _tabController;
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(vsync: this, length: 5);
+    //初始化 controler 设置 length
+    _tabController = TabController(vsync: this, length: 8);
   }
 
   @override
@@ -29,6 +31,7 @@ class _AppbarWidgetState extends State<AppbarWidget> with SingleTickerProviderSt
         MainTitleWidget('Appbar基本使用'),
         AppBar(
           title: Text('Appbar Title'),
+          centerTitle: true,
           backgroundColor: Colors.cyan,
           actions: <Widget>[
             IconButton(
@@ -104,7 +107,8 @@ class _AppbarWidgetState extends State<AppbarWidget> with SingleTickerProviderSt
                 onPressed: () {},
               ),
               PopupMenuButton<String>(
-                  itemBuilder: (BuildContext context) => <PopupMenuItem<String>>[
+                  itemBuilder: (BuildContext context) =>
+                      <PopupMenuItem<String>>[
                         PopupMenuItem<String>(
                           value: 'item1',
                           child: Text('item1 value'),
@@ -125,6 +129,9 @@ class _AppbarWidgetState extends State<AppbarWidget> with SingleTickerProviderSt
                 Tab(text: 'Tabs 3'),
                 Tab(text: 'Tabs 4'),
                 Tab(text: 'Tabs 5'),
+                Tab(text: 'Tabs 6'),
+                Tab(text: 'Tabs 7'),
+                Tab(text: 'Tabs 8'),
               ],
             ),
           ),
