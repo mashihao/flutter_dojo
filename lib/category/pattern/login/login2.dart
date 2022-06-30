@@ -59,7 +59,10 @@ class _Login2State extends State<Login2> with TickerProviderStateMixin {
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
             SizedBox(height: 75),
-            Image(width: 250, height: 191, image: AssetImage('assets/images/book.jpg')),
+            Image(
+                width: 250,
+                height: 191,
+                image: AssetImage('assets/images/book.jpg')),
             SizedBox(height: 20),
             Padding(
               padding: EdgeInsets.only(top: 20.0),
@@ -130,7 +133,10 @@ class _SignInPageState extends State<SignInPage> {
                 padding: const EdgeInsets.only(top: 50),
                 child: Text(
                   'Forgot Password',
-                  style: TextStyle(fontSize: 16, color: Colors.white, decoration: TextDecoration.underline),
+                  style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                      decoration: TextDecoration.underline),
                 ),
               ),
               Padding(
@@ -151,7 +157,8 @@ class _SignInPageState extends State<SignInPage> {
                       height: 1,
                       width: 100,
                       decoration: BoxDecoration(
-                        gradient: LinearGradient(colors: [Colors.white, Colors.white10]),
+                        gradient: LinearGradient(
+                            colors: [Colors.white, Colors.white10]),
                       ),
                     ),
                   ],
@@ -182,7 +189,8 @@ class _SignInPageState extends State<SignInPage> {
           children: <Widget>[
             Flexible(
               child: Padding(
-                padding: const EdgeInsets.only(left: 25, right: 25, top: 20, bottom: 20),
+                padding: const EdgeInsets.only(
+                    left: 25, right: 25, top: 20, bottom: 20),
                 child: TextFormField(
                   decoration: InputDecoration(
                       icon: Icon(
@@ -265,7 +273,6 @@ class _SignUpPageState extends State<SignUpPage> {
       padding: EdgeInsets.only(top: 23),
       child: Stack(
         alignment: Alignment.topCenter,
-        overflow: Overflow.visible,
         children: <Widget>[
           Container(
               decoration: BoxDecoration(
@@ -278,7 +285,8 @@ class _SignUpPageState extends State<SignUpPage> {
           Positioned(
             child: Center(
               child: Container(
-                padding: EdgeInsets.only(top: 10, bottom: 10, left: 42, right: 42),
+                padding:
+                    EdgeInsets.only(top: 10, bottom: 10, left: 42, right: 42),
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: const [Color(0xFFfbab66), Color(0xFFf7418c)],
@@ -311,7 +319,8 @@ class _SignUpPageState extends State<SignUpPage> {
           //用户名字
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(left: 25, right: 25, top: 20, bottom: 20),
+              padding: const EdgeInsets.only(
+                  left: 25, right: 25, top: 20, bottom: 20),
               child: TextFormField(
                 decoration: InputDecoration(
                     icon: Icon(
@@ -331,7 +340,8 @@ class _SignUpPageState extends State<SignUpPage> {
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(left: 25, right: 25, top: 20, bottom: 20),
+              padding: const EdgeInsets.only(
+                  left: 25, right: 25, top: 20, bottom: 20),
               child: TextFormField(
                 decoration: InputDecoration(
                     icon: Icon(
@@ -351,7 +361,8 @@ class _SignUpPageState extends State<SignUpPage> {
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(left: 25, right: 25, top: 20, bottom: 20),
+              padding: const EdgeInsets.only(
+                  left: 25, right: 25, top: 20, bottom: 20),
               child: TextFormField(
                 decoration: InputDecoration(
                   icon: Icon(
@@ -380,7 +391,8 @@ class _SignUpPageState extends State<SignUpPage> {
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(left: 25, right: 25, top: 20, bottom: 20),
+              padding: const EdgeInsets.only(
+                  left: 25, right: 25, top: 20, bottom: 20),
               child: TextFormField(
                 decoration: InputDecoration(
                   icon: Icon(
@@ -417,7 +429,12 @@ class TabIndicationPainter extends CustomPainter {
 
   final PageController pageController;
 
-  TabIndicationPainter({this.dxTarget = 125.0, this.dxEntry = 25.0, this.radius = 21.0, this.dy = 25.0, this.pageController})
+  TabIndicationPainter(
+      {this.dxTarget = 125.0,
+      this.dxEntry = 25.0,
+      this.radius = 21.0,
+      this.dy = 25.0,
+      this.pageController})
       : super(repaint: pageController) {
     painter = Paint()
       ..color = Color(0xFFFFFFFF)
@@ -427,7 +444,8 @@ class TabIndicationPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final pos = pageController.position;
-    double fullExtent = (pos.maxScrollExtent - pos.minScrollExtent + pos.viewportDimension);
+    double fullExtent =
+        (pos.maxScrollExtent - pos.minScrollExtent + pos.viewportDimension);
 
     double pageOffset = pos.extentBefore / fullExtent;
 
@@ -436,9 +454,11 @@ class TabIndicationPainter extends CustomPainter {
     Offset target = Offset(left2right ? dxTarget : dxEntry, dy);
 
     Path path = Path();
-    path.addArc(Rect.fromCircle(center: entry, radius: radius), 0.5 * pi, 1 * pi);
+    path.addArc(
+        Rect.fromCircle(center: entry, radius: radius), 0.5 * pi, 1 * pi);
     path.addRect(Rect.fromLTRB(entry.dx, dy - radius, target.dx, dy + radius));
-    path.addArc(Rect.fromCircle(center: target, radius: radius), 1.5 * pi, 1 * pi);
+    path.addArc(
+        Rect.fromCircle(center: target, radius: radius), 1.5 * pi, 1 * pi);
 
     canvas.translate(size.width * pageOffset, 0.0);
     canvas.drawShadow(path, Color(0xFFfbab66), 3.0, true);

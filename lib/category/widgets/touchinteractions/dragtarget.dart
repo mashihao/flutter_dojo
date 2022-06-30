@@ -48,7 +48,7 @@ class _DragTargetWidgetState extends State<DragTargetWidget> {
                       color: Colors.blue,
                       child: Text(
                         'Drag',
-                        style: Theme.of(context).textTheme.body1,
+                        style: Theme.of(context).textTheme.bodyLarge,
                       ),
                     ),
                   ),
@@ -58,7 +58,8 @@ class _DragTargetWidgetState extends State<DragTargetWidget> {
                 bottom: 0,
                 right: 0,
                 child: DragTarget(
-                  builder: (BuildContext context, List<dynamic> candidateData, List<dynamic> rejectedData) {
+                  builder: (BuildContext context, List<dynamic> candidateData,
+                      List<dynamic> rejectedData) {
                     return Container(
                       width: 80,
                       height: 80,

@@ -16,7 +16,8 @@ class _StepperWidgetState extends State<StepperWidget> {
       Step(
         title: Text(
           'Step 1',
-          style: TextStyle(color: _currentStep == 0 ? Colors.blueAccent : Colors.grey),
+          style: TextStyle(
+              color: _currentStep == 0 ? Colors.blueAccent : Colors.grey),
         ),
         isActive: _currentStep == 0,
         state: changeTitleIcon(0),
@@ -29,7 +30,8 @@ class _StepperWidgetState extends State<StepperWidget> {
       Step(
         title: Text(
           'Step 2',
-          style: TextStyle(color: _currentStep == 1 ? Colors.blueAccent : Colors.grey),
+          style: TextStyle(
+              color: _currentStep == 1 ? Colors.blueAccent : Colors.grey),
         ),
         isActive: _currentStep == 1,
         state: changeTitleIcon(1),
@@ -42,7 +44,8 @@ class _StepperWidgetState extends State<StepperWidget> {
       Step(
         title: Text(
           'Step 3',
-          style: TextStyle(color: _currentStep == 2 ? Colors.blueAccent : Colors.grey),
+          style: TextStyle(
+              color: _currentStep == 2 ? Colors.blueAccent : Colors.grey),
         ),
         isActive: _currentStep == 2,
         state: changeTitleIcon(2),
@@ -81,39 +84,6 @@ class _StepperWidgetState extends State<StepperWidget> {
             },
             onStepTapped: (index) {
               setState(() => _currentStep = index);
-            },
-            controlsBuilder: (_, {VoidCallback onStepContinue, VoidCallback onStepCancel}) {
-              return Row(
-                children: <Widget>[
-                  RaisedButton(
-                    color: Colors.red,
-                    onPressed: onStepCancel,
-                    child: Row(
-                      children: <Widget>[
-                        Icon(Icons.arrow_back, color: Colors.white),
-                        Text(
-                          'Cancel',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(width: 10),
-                  RaisedButton(
-                    color: Colors.blue,
-                    onPressed: onStepContinue,
-                    child: Row(
-                      children: <Widget>[
-                        Icon(Icons.check, color: Colors.white),
-                        Text(
-                          'OK',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              );
             },
             steps: stepData,
           ),

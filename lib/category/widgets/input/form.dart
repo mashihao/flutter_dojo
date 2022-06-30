@@ -37,7 +37,6 @@ class _FormWidgetState extends State<FormWidget> {
         MainTitleWidget('Form AutoValidate'),
         Form(
           key: formKey,
-          autovalidate: isAutoValidate,
           child: Column(
             children: <Widget>[
               TextFormField(

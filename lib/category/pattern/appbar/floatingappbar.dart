@@ -7,7 +7,8 @@ class FloatingAppBarWidget extends StatefulWidget {
   _FloatingAppBarWidgetState createState() => _FloatingAppBarWidgetState();
 }
 
-class _FloatingAppBarWidgetState extends State<FloatingAppBarWidget> with SingleTickerProviderStateMixin {
+class _FloatingAppBarWidgetState extends State<FloatingAppBarWidget>
+    with SingleTickerProviderStateMixin {
   int currentIndex = 0;
   double height = 60;
   double moveProgress = 0;
@@ -22,7 +23,8 @@ class _FloatingAppBarWidgetState extends State<FloatingAppBarWidget> with Single
 
   @override
   void initState() {
-    controller = AnimationController(vsync: this, duration: Duration(milliseconds: 300));
+    controller =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 300));
     super.initState();
   }
 
@@ -39,12 +41,15 @@ class _FloatingAppBarWidgetState extends State<FloatingAppBarWidget> with Single
               child: Container(
                 width: width,
                 child: Stack(
-                  overflow: Overflow.visible,
                   children: <Widget>[
                     //浮动图标
                     Positioned(
-                      top: controller.value <= 0.5 ? (controller.value * height - height * 0.2) : (1 - controller.value) * height - height * 0.2,
-                      left: moveProgress * itemWidth + itemWidth / 2 - floatingIconRadius,
+                      top: controller.value <= 0.5
+                          ? (controller.value * height - height * 0.2)
+                          : (1 - controller.value) * height - height * 0.2,
+                      left: moveProgress * itemWidth +
+                          itemWidth / 2 -
+                          floatingIconRadius,
                       child: CircleAvatar(
                         radius: floatingIconRadius,
                         backgroundColor: Colors.red,
@@ -75,7 +80,8 @@ class _FloatingAppBarWidgetState extends State<FloatingAppBarWidget> with Single
                           }).toList(),
                         ),
                       ),
-                      painter: NotchedPainter(itemCount: menuList.length, progress: moveProgress),
+                      painter: NotchedPainter(
+                          itemCount: menuList.length, progress: moveProgress),
                     ),
                   ],
                 ),
@@ -91,9 +97,11 @@ class _FloatingAppBarWidgetState extends State<FloatingAppBarWidget> with Single
   changeIndex(int newIndex) {
     double oldPosition = currentIndex.toDouble();
     double newPosition = newIndex.toDouble();
-    if (oldPosition != newPosition && controller.status != AnimationStatus.forward) {
+    if (oldPosition != newPosition &&
+        controller.status != AnimationStatus.forward) {
       controller.reset();
-      animation = Tween(begin: oldPosition, end: newPosition).animate(CurvedAnimation(parent: controller, curve: Curves.easeInOutCubic))
+      animation = Tween(begin: oldPosition, end: newPosition).animate(
+          CurvedAnimation(parent: controller, curve: Curves.easeInOutCubic))
         ..addListener(() {
           setState(() => moveProgress = animation.value);
         })
@@ -133,9 +141,18 @@ class NotchedPainter extends CustomPainter {
     var p2 = Offset(0, canvasHeight);
     var p3 = Offset(canvasWidth, canvasHeight);
     var p4 = Offset(canvasWidth, 0);
-    var p5 = Offset(progress * itemWidth + itemWidth / 2.0 + notchedWidth / 2.0 + notchedWidth * 0.2, 0);
+    var p5 = Offset(
+        progress * itemWidth +
+            itemWidth / 2.0 +
+            notchedWidth / 2.0 +
+            notchedWidth * 0.2,
+        0);
     var p6 = Offset(progress * itemWidth + itemWidth / 2.0, canvasHeight * 0.6);
-    var p7 = Offset((itemWidth - notchedWidth) / 2.0 + progress * itemWidth - notchedWidth * 0.2, 0);
+    var p7 = Offset(
+        (itemWidth - notchedWidth) / 2.0 +
+            progress * itemWidth -
+            notchedWidth * 0.2,
+        0);
 
     var c1 = Offset(p5.dx - notchedWidth * 0.5, 0);
     var c2 = Offset(p5.dx - notchedWidth * 0.2, p6.dy);

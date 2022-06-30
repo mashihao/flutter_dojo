@@ -26,10 +26,12 @@ class TitledBottomNavigationBar extends StatefulWidget {
   const TitledBottomNavigationBar({Key key, this.items}) : super(key: key);
 
   @override
-  _TitledBottomNavigationBarState createState() => _TitledBottomNavigationBarState();
+  _TitledBottomNavigationBarState createState() =>
+      _TitledBottomNavigationBarState();
 }
 
-class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar> with SingleTickerProviderStateMixin {
+class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar>
+    with SingleTickerProviderStateMixin {
   List<Item> get items => widget.items;
   int selectedIndex = 0;
   static const double BAR_HEIGHT = 60;
@@ -61,7 +63,6 @@ class _TitledBottomNavigationBarState extends State<TitledBottomNavigationBar> w
         ],
       ),
       child: Stack(
-//        overflow: Overflow.visible,// Debug使用
         children: <Widget>[
           Positioned(
             top: INDICATOR_HEIGHT,

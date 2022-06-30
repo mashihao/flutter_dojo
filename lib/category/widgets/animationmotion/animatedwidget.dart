@@ -7,7 +7,8 @@ class AnimatedWidgetWidget extends StatefulWidget {
   _AnimatedWidgetWidgetState createState() => _AnimatedWidgetWidgetState();
 }
 
-class _AnimatedWidgetWidgetState extends State<AnimatedWidgetWidget> with SingleTickerProviderStateMixin {
+class _AnimatedWidgetWidgetState extends State<AnimatedWidgetWidget>
+    with SingleTickerProviderStateMixin {
   AnimationController _controller;
   Animation<double> _animationScale;
   Animation<double> _animationRotation;
@@ -27,9 +28,12 @@ class _AnimatedWidgetWidgetState extends State<AnimatedWidgetWidget> with Single
     _animationScale = Tween(begin: 0.0, end: 1.0).animate(_controller);
     _animationRotation = Tween(begin: 0.0, end: 2.0).animate(_controller);
     _animationSize = Tween(begin: 0.0, end: 1.0).animate(_controller);
-    _animationSlide = Tween(begin: Offset(0, 0), end: Offset(0.5, 0.5)).animate(_controller);
+    _animationSlide =
+        Tween(begin: Offset(0, 0), end: Offset(0.5, 0.5)).animate(_controller);
     _animationOutline = Tween(begin: 2.0, end: 8.0).animate(_controller);
-    _animationAlign = Tween<AlignmentGeometry>(begin: Alignment.topLeft, end: Alignment.bottomRight).animate(_controller);
+    _animationAlign = Tween<AlignmentGeometry>(
+            begin: Alignment.topLeft, end: Alignment.bottomRight)
+        .animate(_controller);
   }
 
   @override
@@ -113,9 +117,8 @@ class OutlineTransition extends AnimatedWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OutlineButton(
+    return OutlinedButton(
       onPressed: () {},
-      borderSide: BorderSide(width: borderWidth.value),
       child: Text('Custom AnimatedWidget'),
     );
   }

@@ -7,8 +7,10 @@ class CupertinoTabViewWidget extends StatelessWidget {
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
         items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(CupertinoIcons.home), title: Text('Item1')),
-          BottomNavigationBarItem(icon: Icon(CupertinoIcons.person), title: Text('Item2')),
+          BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.home), label: ('Item1')),
+          BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.person), label: ('Item2')),
         ],
       ),
       tabBuilder: (BuildContext context, int index) {
@@ -22,7 +24,8 @@ class CupertinoTabViewWidget extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    Text('要在CupertinoTabView上方而不是在其内部推送路径（例如在所有Tab上显示对话框时），请使用 Navigator.of(rootNavigator: true),如下'),
+                    Text(
+                        '要在CupertinoTabView上方而不是在其内部推送路径（例如在所有Tab上显示对话框时），请使用 Navigator.of(rootNavigator: true),如下'),
                     CupertinoButton(
                       child: Text('下一页'),
                       onPressed: () {
@@ -36,7 +39,8 @@ class CupertinoTabViewWidget extends StatelessWidget {
                                 child: Center(
                                   child: CupertinoButton(
                                     child: Text('Back'),
-                                    onPressed: () => Navigator.of(context).pop(),
+                                    onPressed: () =>
+                                        Navigator.of(context).pop(),
                                   ),
                                 ),
                               );

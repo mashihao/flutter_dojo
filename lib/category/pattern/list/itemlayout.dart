@@ -77,7 +77,9 @@ class TwitterItemWidget extends StatelessWidget {
                                     ),
                                     Text(
                                       '@xuyisheng·1天',
-                                      style: TextStyle(fontSize: 12, color: Colors.grey.shade500),
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.grey.shade500),
                                     ),
                                     Spacer(),
                                     Icon(
@@ -95,7 +97,8 @@ class TwitterItemWidget extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(12),
                                       image: DecorationImage(
                                         fit: BoxFit.cover,
-                                        image: AssetImage('assets/images/widget_bg.png'),
+                                        image: AssetImage(
+                                            'assets/images/widget_bg.png'),
                                       ),
                                     ),
                                   ),
@@ -104,7 +107,9 @@ class TwitterItemWidget extends StatelessWidget {
                                   margin: EdgeInsets.symmetric(vertical: 8),
                                   child: Text(
                                     '999个查看',
-                                    style: TextStyle(fontSize: 12, color: Colors.grey.shade500),
+                                    style: TextStyle(
+                                        fontSize: 12,
+                                        color: Colors.grey.shade500),
                                   ),
                                 ),
                                 Row(
@@ -118,7 +123,9 @@ class TwitterItemWidget extends StatelessWidget {
                                     SizedBox(width: 4),
                                     Text(
                                       '99',
-                                      style: TextStyle(fontSize: 12, color: Colors.grey.shade500),
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.grey.shade500),
                                     ),
                                     Spacer(),
                                     Icon(
@@ -129,7 +136,9 @@ class TwitterItemWidget extends StatelessWidget {
                                     SizedBox(width: 4),
                                     Text(
                                       '99',
-                                      style: TextStyle(fontSize: 12, color: Colors.grey.shade500),
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.grey.shade500),
                                     ),
                                     Spacer(),
                                     Icon(
@@ -140,7 +149,9 @@ class TwitterItemWidget extends StatelessWidget {
                                     SizedBox(width: 4),
                                     Text(
                                       '99',
-                                      style: TextStyle(fontSize: 12, color: Colors.grey.shade500),
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.grey.shade500),
                                     ),
                                     Spacer(),
                                     Icon(
@@ -151,7 +162,9 @@ class TwitterItemWidget extends StatelessWidget {
                                     SizedBox(width: 4),
                                     Text(
                                       '99',
-                                      style: TextStyle(fontSize: 12, color: Colors.grey.shade500),
+                                      style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.grey.shade500),
                                     ),
                                     SizedBox(width: 30)
                                   ],
@@ -188,7 +201,6 @@ class TaoBaoItemWidget extends StatelessWidget {
           Container(
             margin: EdgeInsets.only(left: 8),
             child: Stack(
-              overflow: Overflow.clip,
               children: <Widget>[
                 Container(
                   height: 150,
@@ -357,7 +369,6 @@ class WeChatItemWidget extends StatelessWidget {
                 ),
               ),
             ],
-            overflow: Overflow.visible,
           ),
           Container(
             margin: EdgeInsets.only(left: 16),
